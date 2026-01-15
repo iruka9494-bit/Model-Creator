@@ -7,7 +7,8 @@ import { AspectRatio, ImageSize, SubjectPose, CameraAngle, CameraType } from "..
 const MODEL_NAME = "gemini-3-pro-image-preview";
 
 // Variable to store the user-provided API key
-let userApiKey: string | undefined = process.env.API_KEY;
+// FIXED: Initialize as undefined to avoid "process is not defined" error in browser runtime
+let userApiKey: string | undefined = undefined;
 
 export const setApiKey = (key: string) => {
   userApiKey = key;
